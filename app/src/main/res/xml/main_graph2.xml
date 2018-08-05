@@ -5,26 +5,40 @@
     app:startDestination="@id/fragment1">
     <fragment
         android:id="@+id/fragment1"
-        android:name="ru.startandroid.navigation.Fragment1"
+        android:name="com.example.sbotlevskyi.navigationtest.Fragment1"
         android:label="fragment1"
         tools:layout="@layout/fragment1" >
         <action
             android:id="@+id/action_fragment1_to_fragment2"
             app:destination="@id/fragment2" />
+        <action
+            android:id="@+id/action_fragment1_to_fragment3"
+            app:destination="@id/fragment3" />
     </fragment>
     <fragment
         android:id="@+id/fragment2"
-        android:name="ru.startandroid.navigation.Fragment2"
+        android:name="com.example.sbotlevskyi.navigationtest.Fragment2"
         android:label="fragment2"
-        tools:layout="@layout/fragment2" />
+        tools:layout="@layout/fragment2" >
+        <action
+            android:id="@+id/action_fragment2_to_fragment3"
+            app:destination="@id/fragment3" />
+    </fragment>
+
     <fragment
         android:id="@+id/fragment3"
-        android:name="ru.startandroid.navigation.Fragment3"
+        android:name="com.example.sbotlevskyi.navigationtest.Fragment3"
         android:label="fragment3"
-        tools:layout="@layout/fragment3" />
+        tools:layout="@layout/fragment3">
+        <action
+            android:id="@+id/action_fragment3_to_secondActivity"
+            app:destination="@id/secondActivity" />
+    </fragment>
+
     <activity
         android:id="@+id/secondActivity"
-        android:name="ru.startandroid.navigation.SecondActivity"
+        android:name="com.example.sbotlevskyi.navigationtest.SecondActivity"
         android:label="activity_second"
         tools:layout="@layout/activity_second" />
+
 </navigation>
